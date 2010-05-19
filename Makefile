@@ -1,7 +1,7 @@
 include config.mk
 
-MOSH = env MOSH_LOADPATH=$(XUNIT) mosh --loadpath=sitelib
-YPSILON = env YPSILON_SITELIB=$(XUNIT) ypsilon --sitelib=sitelib
+MOSH = env MOSH_LOADPATH=$(XUNIT):test/stub mosh --loadpath=sitelib
+YPSILON = env YPSILON_SITELIB=$(XUNIT):test/stub ypsilon --sitelib=sitelib
 
 .PHONY: check test
 
