@@ -1,0 +1,27 @@
+An R6RS library for Hypertext Transfer Protocol (HTTP)
+
+== License
+
+New BSD License
+
+== RFC
+
+Hypertext Transfer Protocol -- HTTP/1.1
+http://www.ietf.org/rfc/rfc2616.txt
+http://www.w3.org/Protocols/rfc2616/rfc2616.html
+
+HTTP Authentication: Basic and Digest Access Authentication
+http://www.ietf.org/rfc/rfc2617.txt
+
+HTTP State Management Mechanism
+http://www.ietf.org/rfc/rfc2965.txt
+
+== Notes
+
+* Tests needs Ypsilon [0] with an external library (xunit) [1];
+  Run `YPSILON_SITELIB="path of (xunit)" make test'.
+
+== References
+
+[0] http://code.google.com/p/ypsilon/
+[1] http://github.com/tabe/xunit/
