@@ -1,8 +1,10 @@
 An R6RS library for Hypertext Transfer Protocol (HTTP)
 
+
 == License
 
 New BSD License
+
 
 == RFC
 
@@ -16,12 +18,18 @@ http://www.ietf.org/rfc/rfc2617.txt
 HTTP State Management Mechanism
 http://www.ietf.org/rfc/rfc2965.txt
 
-== Notes
 
-* Tests needs Ypsilon [0] with an external library (xunit) [1];
-  Run `YPSILON_SITELIB="path of (xunit)" make test'.
+== Note
 
-== References
+* Tests use Mosh [0] and Ypsilon [1] as R6RS interpreters,
+  with our xUnit library (xunit) [2].
+  So you need to specify (xunit)'s location as $(XUNIT) in
+  "config.mk".
+  Then: make test.
 
-[0] http://code.google.com/p/ypsilon/
-[1] http://github.com/tabe/xunit/
+
+== Reference
+
+[0] http://code.google.com/p/mosh-scheme/
+[1] http://code.google.com/p/ypsilon/
+[2] http://github.com/tabe/xunit/
