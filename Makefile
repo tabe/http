@@ -12,6 +12,8 @@ test:
 	$(YPSILON) test/http/abnf.scm
 	$(MOSH)    test/http/basic-rule.scm
 	$(YPSILON) test/http/basic-rule.scm
+	$(MOSH)    test/http/character-set.scm
+	$(YPSILON) test/http/character-set.scm
 	$(MOSH)    test/http/content-coding.scm
 	$(YPSILON) test/http/content-coding.scm
 	$(MOSH)    test/http/date-time.scm
