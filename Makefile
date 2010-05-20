@@ -26,6 +26,8 @@ test:
 	$(YPSILON) test/http/product-token.scm
 	$(MOSH)    test/http/quality-value.scm
 	$(YPSILON) test/http/quality-value.scm
+	$(MOSH)    test/http/range-unit.scm
+	$(YPSILON) test/http/range-unit.scm
 	$(MOSH)    test/http/stream.scm
 	$(YPSILON) test/http/stream.scm
 	$(MOSH)    test/http/transfer-coding.scm
