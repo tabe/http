@@ -16,5 +16,7 @@ test:
 	$(YPSILON) test/http/date-time.scm
 	$(MOSH)    test/http/stream.scm
 	$(YPSILON) test/http/stream.scm
+	$(MOSH)    test/http/transfer-coding.scm
+	$(YPSILON) test/http/transfer-coding.scm
 	$(MOSH)    test/http/version.scm
 	$(YPSILON) test/http/version.scm
