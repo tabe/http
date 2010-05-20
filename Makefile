@@ -14,6 +14,10 @@ test:
 	$(YPSILON) test/http/basic-rule.scm
 	$(MOSH)    test/http/date-time.scm
 	$(YPSILON) test/http/date-time.scm
+	$(MOSH)    test/http/media-type.scm
+	$(YPSILON) test/http/media-type.scm
+	$(MOSH)    test/http/parameter.scm
+	$(YPSILON) test/http/parameter.scm
 	$(MOSH)    test/http/stream.scm
 	$(YPSILON) test/http/stream.scm
 	$(MOSH)    test/http/transfer-coding.scm
