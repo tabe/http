@@ -1,5 +1,15 @@
 (library (http abnf)
-  (export OCTET
+  (export char->rule
+          string->rule
+          pair->rule
+          seq
+          bar
+          rep
+          rep*
+          rep+
+          rep=
+          opt
+          OCTET
           CHAR
           UPALPHA
           LOALPHA
@@ -11,15 +21,11 @@
           SP
           HT
           DQ
+          CRLF
+          LWS
           HEX
           separator-chars
           separator
-          char->rule
-          string->rule
-          pair->rule
-          seq
-          bar
-          rep
           )
   (import (rnrs (6))
           (only (http stream) stream-pop! stream-push!))
@@ -104,8 +110,20 @@
              (lambda (h t)
                (loop (append h head) (cons t tree))))))))
 
+  (define (rep* rule) (rep 0 #t rule))
+
+  (define (rep+ rule) (rep 1 #t rule))
+
+  (define (rep= n rule) (rep n n rule))
+
+  (define (opt rule) (rep 0 1 rule))
+
   ;; OCTET          = <any 8-bit sequence of data>
-  (define OCTET #t)
+  (define (OCTET s failure success)
+    (let ((c (stream-pop! s)))
+      (if (eof-object? c)
+          (failure '())
+          (success (list c) c))))
 
   ;; CHAR           = <any US-ASCII character (octets 0 - 127)>
   (define CHAR (pair->rule '(0 . 127)))
@@ -140,6 +158,12 @@
 
   ;; <">            = <US-ASCII double-quote mark (34)>
   (define DQ (char->rule #\"))
+
+  ;; CRLF           = CR LF
+  (define CRLF (seq CR LF))
+
+  ;; LWS            = [CRLF] 1*( SP | HT )
+  (define LWS (seq (opt CRLF) (rep+ (bar SP HT))))
 
   ;; HEX            = "A" | "B" | "C" | "D" | "E" | "F"
   ;;                | "a" | "b" | "c" | "d" | "e" | "f" | DIGIT

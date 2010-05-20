@@ -8,8 +8,8 @@
 
   (define GMT (string->rule "GMT"))
 
-  (define DIGIT2 (rep 2 2 DIGIT))
-  (define DIGIT4 (rep 4 4 DIGIT))
+  (define DIGIT2 (rep= 2 DIGIT))
+  (define DIGIT4 (rep= 4 DIGIT))
 
   (define wkday
     (apply bar (map string->rule '("Mon" "Tue" "Wed" "Thu" "Fri" "Sat" "Sun"))))
@@ -33,7 +33,7 @@
          (bar
           DIGIT2
           (seq SP
-               (rep 1 1 DIGIT)))))
+               (rep= 1 DIGIT)))))
 
   (define time
     (let ((: (char->rule #\:)))
@@ -51,7 +51,6 @@
   (define HTTP-date
     (bar rfc1123-date rfc850-date asctime-date))
 
-  (define delta-seconds
-    (rep 1 #t DIGIT))
+  (define delta-seconds (rep+ DIGIT))
 
 )

@@ -4,7 +4,7 @@
           (http abnf))
 
  (define HTTP-Version
-    (let ((*digit (rep 1 #t DIGIT)))
+    (let ((*digit (rep+ DIGIT)))
       (seq (string->rule "HTTP/")
            *digit
            (char->rule #\.)

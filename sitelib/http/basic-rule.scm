@@ -21,15 +21,14 @@
                 (success (list c) c)
                 (failure (list c)))))))
 
-  (define token
-    (rep 1 #t CHAR-except-CTLs-or-separators))
+  (define token (rep+ CHAR-except-CTLs-or-separators))
 
   (define (comment s failure success)
     (let ((c (stream-pop! s)))
       (cond ((eof-object? c)
              (failure '()))
             ((char=? #\( c)
-             ((rep 0 #t (bar quoted-pair ctext comment)) ;; quoted-pair must precede ctext since ctext includes #\\.
+             ((rep* (bar quoted-pair ctext comment)) ;; quoted-pair must precede ctext since ctext includes #\\.
               s
               failure
               (lambda (head tree)
@@ -100,7 +99,7 @@
   (define quoted-string
     (let ((dq (char->rule #\")))
       (seq dq
-           (rep 0 #t (bar quoted-pair qdtext)) ;; quoted-pair must precede qdtext since qdtext includes #\\.
+           (rep* (bar quoted-pair qdtext)) ;; quoted-pair must precede qdtext since qdtext includes #\\.
            dq)))
 
 )
