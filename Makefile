@@ -20,6 +20,8 @@ test:
 	$(YPSILON) test/http/parameter.scm
 	$(MOSH)    test/http/product-token.scm
 	$(YPSILON) test/http/product-token.scm
+	$(MOSH)    test/http/quality-value.scm
+	$(YPSILON) test/http/quality-value.scm
 	$(MOSH)    test/http/stream.scm
 	$(YPSILON) test/http/stream.scm
 	$(MOSH)    test/http/transfer-coding.scm
