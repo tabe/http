@@ -14,6 +14,8 @@ test:
 	$(YPSILON) test/http/basic-rule.scm
 	$(MOSH)    test/http/date-time.scm
 	$(YPSILON) test/http/date-time.scm
+	$(MOSH)    test/http/language-tag.scm
+	$(YPSILON) test/http/language-tag.scm
 	$(MOSH)    test/http/media-type.scm
 	$(YPSILON) test/http/media-type.scm
 	$(MOSH)    test/http/parameter.scm
