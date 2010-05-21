@@ -9,6 +9,10 @@
           rep+
           rep=
           opt
+          num
+          num*
+          num+
+          num=
           OCTET
           CHAR
           UPALPHA
@@ -23,6 +27,7 @@
           DQ
           CRLF
           LWS
+          *LWS
           HEX
           separator-chars
           separator
@@ -118,6 +123,37 @@
 
   (define (opt rule) (rep 0 1 rule))
 
+  (define (num n m rule)
+    (lambda (s failure success)
+      (let loop ((head '())
+                 (tree '()))
+        (let ((c (stream-pop! s)))
+          (cond ((eof-object? c)
+                 (if (<= n (length tree))
+                     (success head (reverse tree))
+                     (failure head)))
+                ((member c '(#\return #\linefeed #\space #\tab #\,))
+                 (loop (cons c head) tree))
+                (else
+                 (stream-push! s c)
+                 (rule
+                  s
+                  (lambda (h)
+                    (for-each (lambda (x) (stream-push! s x)) h)
+                    (if (<= n (length tree))
+                        (success head (reverse tree))
+                        (failure head)))
+                  (lambda (h t)
+                    (if (and (integer? m) (>= (length tree) m))
+                        (failure (append h head))
+                        (loop (append h head) (cons t tree)))))))))))
+
+  (define (num* rule) (num 0 #t rule))
+
+  (define (num+ rule) (num 1 #t rule))
+
+  (define (num= n rule) (num n n rule))
+
   ;; OCTET          = <any 8-bit sequence of data>
   (define (OCTET s failure success)
     (let ((c (stream-pop! s)))
@@ -164,6 +200,17 @@
 
   ;; LWS            = [CRLF] 1*( SP | HT )
   (define LWS (seq (opt CRLF) (rep+ (bar SP HT))))
+
+  (define (*LWS s failure success)
+    (let loop ((head '()))
+      (let ((c (stream-pop! s)))
+        (cond ((eof-object? c)
+               (success head (reverse head)))
+              ((member c '(#\return #\linefeed #\space #\tab))
+               (loop (cons c head)))
+              (else
+               (stream-push! s c)
+               (success head (reverse head)))))))
 
   ;; HEX            = "A" | "B" | "C" | "D" | "E" | "F"
   ;;                | "a" | "b" | "c" | "d" | "e" | "f" | DIGIT

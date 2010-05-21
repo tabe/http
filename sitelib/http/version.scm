@@ -3,7 +3,9 @@
   (import (rnrs (6))
           (http abnf))
 
- (define HTTP-Version
+  ;;; 3.1 HTTP Version
+
+  (define HTTP-Version
     (let ((*digit (rep+ DIGIT)))
       (seq (string->rule "HTTP/")
            *digit

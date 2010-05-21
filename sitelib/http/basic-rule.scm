@@ -1,5 +1,6 @@
 (library (http basic-rule)
-  (export token
+  (export TEXT-except
+          token
           comment
           ctext
           quoted-string

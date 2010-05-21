@@ -1,11 +1,14 @@
 (library (http media-type)
-  (export media-type)
+  (export type
+          subtype
+          media-type)
   (import (rnrs (6))
           (http abnf)
           (http basic-rule)
           (http parameter))
 
   ;;; 3.7 Media Types
+
   (define type token)
 
   (define subtype token)

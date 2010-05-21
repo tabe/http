@@ -20,6 +20,8 @@ test:
 	$(YPSILON) test/http/date-time.scm
 	$(MOSH)    test/http/entity-tag.scm
 	$(YPSILON) test/http/entity-tag.scm
+	$(MOSH)    test/http/header-field/accept.scm
+	$(YPSILON) test/http/header-field/accept.scm
 	$(MOSH)    test/http/language-tag.scm
 	$(YPSILON) test/http/language-tag.scm
 	$(MOSH)    test/http/media-type.scm
