@@ -40,6 +40,8 @@ test:
 	$(YPSILON) test/http/header-field/connection.scm
 	$(MOSH)    test/http/header-field/content-encoding.scm
 	$(YPSILON) test/http/header-field/content-encoding.scm
+	$(MOSH)    test/http/header-field/content-language.scm
+	$(YPSILON) test/http/header-field/content-language.scm
 	$(MOSH)    test/http/language-tag.scm
 	$(YPSILON) test/http/language-tag.scm
 	$(MOSH)    test/http/media-type.scm
