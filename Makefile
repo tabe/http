@@ -24,6 +24,8 @@ test:
 	$(YPSILON) test/http/header-field/accept-charset.scm
 	$(MOSH)    test/http/header-field/accept-encoding.scm
 	$(YPSILON) test/http/header-field/accept-encoding.scm
+	$(MOSH)    test/http/header-field/accept-language.scm
+	$(YPSILON) test/http/header-field/accept-language.scm
 	$(MOSH)    test/http/header-field/accept.scm
 	$(YPSILON) test/http/header-field/accept.scm
 	$(MOSH)    test/http/language-tag.scm
