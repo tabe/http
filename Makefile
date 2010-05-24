@@ -48,6 +48,8 @@ test:
 	$(YPSILON) test/http/media-type.scm
 	$(MOSH)    test/http/message-header.scm
 	$(YPSILON) test/http/message-header.scm
+	$(MOSH)    test/http/method.scm
+	$(YPSILON) test/http/method.scm
 	$(MOSH)    test/http/parameter.scm
 	$(YPSILON) test/http/parameter.scm
 	$(MOSH)    test/http/product-token.scm
