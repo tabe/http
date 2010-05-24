@@ -36,6 +36,8 @@ test:
 	$(YPSILON) test/http/header-field/allow.scm
 	$(MOSH)    test/http/header-field/cache-control.scm
 	$(YPSILON) test/http/header-field/cache-control.scm
+	$(MOSH)    test/http/header-field/connection.scm
+	$(YPSILON) test/http/header-field/connection.scm
 	$(MOSH)    test/http/language-tag.scm
 	$(YPSILON) test/http/language-tag.scm
 	$(MOSH)    test/http/media-type.scm
