@@ -1,5 +1,6 @@
 (library (http message-header)
-  (export message-header)
+  (export field-name
+          message-header)
   (import (rnrs (6))
           (http abnf)
           (http basic-rule))
