@@ -30,6 +30,8 @@ test:
 	$(YPSILON) test/http/header-field/accept-ranges.scm
 	$(MOSH)    test/http/header-field/accept.scm
 	$(YPSILON) test/http/header-field/accept.scm
+	$(MOSH)    test/http/header-field/age.scm
+	$(YPSILON) test/http/header-field/age.scm
 	$(MOSH)    test/http/language-tag.scm
 	$(YPSILON) test/http/language-tag.scm
 	$(MOSH)    test/http/media-type.scm
