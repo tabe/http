@@ -1,5 +1,6 @@
 (library (http range-unit)
-  (export range-unit)
+  (export bytes-unit
+          range-unit)
   (import (rnrs (6))
           (http abnf)
           (http basic-rule))

@@ -46,6 +46,8 @@ test:
 	$(YPSILON) test/http/header-field/content-length.scm
 	$(MOSH)    test/http/header-field/content-md5.scm
 	$(YPSILON) test/http/header-field/content-md5.scm
+	$(MOSH)    test/http/header-field/content-range.scm
+	$(YPSILON) test/http/header-field/content-range.scm
 	$(MOSH)    test/http/language-tag.scm
 	$(YPSILON) test/http/language-tag.scm
 	$(MOSH)    test/http/media-type.scm
