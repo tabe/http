@@ -214,7 +214,7 @@
 
   ;; HEX            = "A" | "B" | "C" | "D" | "E" | "F"
   ;;                | "a" | "b" | "c" | "d" | "e" | "f" | DIGIT
-  (define HEX (bar ALPHA DIGIT))
+  (define HEX (bar (pair->rule '(65 . 70)) (pair->rule '(97 . 102)) DIGIT))
 
   ;; separators     = "(" | ")" | "<" | ">" | "@"
   ;;                | "," | ";" | ":" | "\" | <">
