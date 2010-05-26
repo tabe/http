@@ -60,6 +60,8 @@ test:
 	$(YPSILON) test/http/header-field/expires.scm
 	$(MOSH)    test/http/header-field/from.scm
 	$(YPSILON) test/http/header-field/from.scm
+	$(MOSH)    test/http/header-field/host.scm
+	$(YPSILON) test/http/header-field/host.scm
 	$(MOSH)    test/http/language-tag.scm
 	$(YPSILON) test/http/language-tag.scm
 	$(MOSH)    test/http/media-type.scm
