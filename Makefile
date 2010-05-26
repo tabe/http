@@ -3,9 +3,13 @@ include config.mk
 MOSH = env MOSH_LOADPATH=$(XUNIT):test/stub mosh --loadpath=sitelib
 YPSILON = env YPSILON_SITELIB=$(XUNIT):test/stub ypsilon --sitelib=sitelib
 
-.PHONY: check test
+.PHONY: check stats test
 
 check: test
+
+stats:
+	find sitelib -type f -name '*.scm' -print0 | xargs -0 wc -l | tail -1
+	find test    -type f -name '*.scm' -print0 | xargs -0 wc -l | tail -1
 
 test:
 	$(MOSH)    test/http/abnf.scm
