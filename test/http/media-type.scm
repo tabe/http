@@ -11,6 +11,6 @@
 (assert-parsing-successfully media-type
                              "text/html;charset=UTF-8"
                              `(,(string->list "text") #\/ ,(string->list "html")
-                               ((#\; (,(string->list "charset") #\= ,(string->list "UTF-8"))))))
+                               ((#\; () (,(string->list "charset") #\= ,(string->list "UTF-8"))))))
 
 (report)

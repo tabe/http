@@ -14,7 +14,7 @@
   (define subtype token)
 
   (define media-type
-    (seq type (char->rule #\/) subtype (rep* (seq (char->rule #\;) parameter))))
+    (seq type (char->rule #\/) subtype (rep* (seq (char->rule #\;) *LWS parameter))))
 
   ;; Media-type values are registered with the Internet Assigned Number
   ;; Authority (IANA [19]). The media type registration process is
