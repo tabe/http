@@ -10,4 +10,3 @@
   (define Date (seq (string->rule "Date") (char->rule #\:) *LWS HTTP-date))
 
 )
-
