@@ -66,6 +66,8 @@ test:
 	$(YPSILON) test/http/header-field/if-match.scm
 	$(MOSH)    test/http/header-field/if-modified-since.scm
 	$(YPSILON) test/http/header-field/if-modified-since.scm
+	$(MOSH)    test/http/header-field/if-none-match.scm
+	$(YPSILON) test/http/header-field/if-none-match.scm
 	$(MOSH)    test/http/language-tag.scm
 	$(YPSILON) test/http/language-tag.scm
 	$(MOSH)    test/http/media-type.scm
