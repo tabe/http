@@ -58,6 +58,8 @@ test:
 	$(YPSILON) test/http/header-field/expect.scm
 	$(MOSH)    test/http/header-field/expires.scm
 	$(YPSILON) test/http/header-field/expires.scm
+	$(MOSH)    test/http/header-field/from.scm
+	$(YPSILON) test/http/header-field/from.scm
 	$(MOSH)    test/http/language-tag.scm
 	$(YPSILON) test/http/language-tag.scm
 	$(MOSH)    test/http/media-type.scm
