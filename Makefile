@@ -52,6 +52,8 @@ test:
 	$(YPSILON) test/http/header-field/content-type.scm
 	$(MOSH)    test/http/header-field/date.scm
 	$(YPSILON) test/http/header-field/date.scm
+	$(MOSH)    test/http/header-field/etag.scm
+	$(YPSILON) test/http/header-field/etag.scm
 	$(MOSH)    test/http/language-tag.scm
 	$(YPSILON) test/http/language-tag.scm
 	$(MOSH)    test/http/media-type.scm
