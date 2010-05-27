@@ -114,5 +114,7 @@ test:
 	$(YPSILON) test/http/uri/query.scm
 	$(MOSH)    test/http/uri/scheme.scm
 	$(YPSILON) test/http/uri/scheme.scm
+	$(MOSH)    test/http/uri.scm
+	$(YPSILON) test/http/uri.scm
 	$(MOSH)    test/http/version.scm
 	$(YPSILON) test/http/version.scm
