@@ -100,6 +100,8 @@ test:
 	$(YPSILON) test/http/transfer-coding.scm
 	$(MOSH)    test/http/uri/host.scm
 	$(YPSILON) test/http/uri/host.scm
+	$(MOSH)    test/http/uri/port.scm
+	$(YPSILON) test/http/uri/port.scm
 	$(MOSH)    test/http/uri/scheme.scm
 	$(YPSILON) test/http/uri/scheme.scm
 	$(MOSH)    test/http/version.scm
