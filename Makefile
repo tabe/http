@@ -102,6 +102,8 @@ test:
 	$(YPSILON) test/http/uri/authority.scm
 	$(MOSH)    test/http/uri/basic-rule.scm
 	$(YPSILON) test/http/uri/basic-rule.scm
+	$(MOSH)    test/http/uri/fragment.scm
+	$(YPSILON) test/http/uri/fragment.scm
 	$(MOSH)    test/http/uri/host.scm
 	$(YPSILON) test/http/uri/host.scm
 	$(MOSH)    test/http/uri/path.scm
