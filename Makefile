@@ -98,5 +98,7 @@ test:
 	$(YPSILON) test/http/stream.scm
 	$(MOSH)    test/http/transfer-coding.scm
 	$(YPSILON) test/http/transfer-coding.scm
+	$(MOSH)    test/http/uri/host.scm
+	$(YPSILON) test/http/uri/host.scm
 	$(MOSH)    test/http/version.scm
 	$(YPSILON) test/http/version.scm
