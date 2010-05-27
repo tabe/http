@@ -2,24 +2,7 @@
   (export host)
   (import (rnrs (6))
           (http abnf)
-          (http basic-rule))
-
-  ;; pct-encoded   = "%" HEXDIG HEXDIG
-  (define pct-encoded (seq (char->rule #\%) HEX HEX))
-
-  ;; unreserved    = ALPHA / DIGIT / "-" / "." / "_" / "~"
-  (define unreserved
-    (bar ALPHA DIGIT (char->rule #\-) (char->rule #\.) (char->rule #\_) (char->rule #\~)))
-
-  ;; sub-delims    = "!" / "$" / "&" / "'" / "(" / ")"
-  ;;               / "*" / "+" / "," / ";" / "="
-  (define sub-delims
-    (let ((chars '(#\! #\$ #\& #\' #\( #\)
-                   #\* #\+ #\, #\; #\=)))
-      (apply bar (map char->rule chars))))
-
-  ;; reg-name      = *( unreserved / pct-encoded / sub-delims )
-  (define reg-name (rep* (bar unreserved pct-encoded sub-delims)))
+          (http uri basic-rule))
 
   ;; dec-octet     = DIGIT                 ; 0-9
   ;;               / %x31-39 DIGIT         ; 10-99

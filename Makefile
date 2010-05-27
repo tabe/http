@@ -98,6 +98,8 @@ test:
 	$(YPSILON) test/http/stream.scm
 	$(MOSH)    test/http/transfer-coding.scm
 	$(YPSILON) test/http/transfer-coding.scm
+	$(MOSH)    test/http/uri/basic-rule.scm
+	$(YPSILON) test/http/uri/basic-rule.scm
 	$(MOSH)    test/http/uri/host.scm
 	$(YPSILON) test/http/uri/host.scm
 	$(MOSH)    test/http/uri/port.scm

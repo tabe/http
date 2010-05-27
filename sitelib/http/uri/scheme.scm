@@ -1,8 +1,7 @@
 (library (http uri scheme)
   (export scheme)
   (import (rnrs (6))
-          (http abnf)
-          (http basic-rule))
+          (http abnf))
 
   ;;; 3.1.  Scheme
 
