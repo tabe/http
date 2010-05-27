@@ -78,6 +78,8 @@ test:
 	$(YPSILON) test/http/header-field/if-unmodified-since.scm
 	$(MOSH)    test/http/header-field/last-modified.scm
 	$(YPSILON) test/http/header-field/last-modified.scm
+	$(MOSH)    test/http/header-field/location.scm
+	$(YPSILON) test/http/header-field/location.scm
 	$(MOSH)    test/http/language-tag.scm
 	$(YPSILON) test/http/language-tag.scm
 	$(MOSH)    test/http/media-type.scm
