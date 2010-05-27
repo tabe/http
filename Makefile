@@ -104,6 +104,8 @@ test:
 	$(YPSILON) test/http/uri/basic-rule.scm
 	$(MOSH)    test/http/uri/host.scm
 	$(YPSILON) test/http/uri/host.scm
+	$(MOSH)    test/http/uri/path.scm
+	$(YPSILON) test/http/uri/path.scm
 	$(MOSH)    test/http/uri/port.scm
 	$(YPSILON) test/http/uri/port.scm
 	$(MOSH)    test/http/uri/scheme.scm
