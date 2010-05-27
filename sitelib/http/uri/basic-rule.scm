@@ -2,6 +2,7 @@
   (export pct-encoded
           unreserved
           sub-delims
+          pchar
           reg-name)
   (import (rnrs (6))
           (http abnf))
@@ -19,6 +20,9 @@
     (let ((chars '(#\! #\$ #\& #\' #\( #\)
                    #\* #\+ #\, #\; #\=)))
       (apply bar (map char->rule chars))))
+
+  ;; pchar         = unreserved / pct-encoded / sub-delims / ":" / "@"
+  (define pchar (bar unreserved pct-encoded sub-delims (char->rule #\:) (char->rule #\@)))
 
   ;; reg-name      = *( unreserved / pct-encoded / sub-delims )
   (define reg-name (rep* (bar unreserved pct-encoded sub-delims)))

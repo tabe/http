@@ -108,6 +108,8 @@ test:
 	$(YPSILON) test/http/uri/path.scm
 	$(MOSH)    test/http/uri/port.scm
 	$(YPSILON) test/http/uri/port.scm
+	$(MOSH)    test/http/uri/query.scm
+	$(YPSILON) test/http/uri/query.scm
 	$(MOSH)    test/http/uri/scheme.scm
 	$(YPSILON) test/http/uri/scheme.scm
 	$(MOSH)    test/http/version.scm

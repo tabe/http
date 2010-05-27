@@ -13,13 +13,6 @@
 
   (define / (char->rule #\/))
 
-  (define : (char->rule #\:))
-
-  (define AT (char->rule #\@))
-
-  ;; pchar         = unreserved / pct-encoded / sub-delims / ":" / "@"
-  (define pchar (bar unreserved pct-encoded sub-delims : AT))
-
   ;; segment       = *pchar
   (define segment (rep* pchar))
 
@@ -28,7 +21,7 @@
 
   ;; segment-nz-nc = 1*( unreserved / pct-encoded / sub-delims / "@" )
   ;;               ; non-zero-length segment without any colon ":"
-  (define segment-nz-nc (rep+ (bar unreserved pct-encoded sub-delims AT)))
+  (define segment-nz-nc (rep+ (bar unreserved pct-encoded sub-delims (char->rule #\@))))
 
   (define path-abempty (rep* (seq / segment)))
 
