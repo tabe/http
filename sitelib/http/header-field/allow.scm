@@ -2,7 +2,6 @@
   (export Allow)
   (import (rnrs (6))
           (http abnf)
-          (http basic-rule)
           (http method))
 
   ;;; 14.7 Allow

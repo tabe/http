@@ -1,8 +1,7 @@
 (library (http header-field host)
   (export Host)
   (import (rnrs (6))
-          (http abnf)
-          (http basic-rule))
+          (http abnf))
 
   ;;; 14.23 Host
 

@@ -2,7 +2,7 @@
   (export Connection)
   (import (rnrs (6))
           (http abnf)
-          (http basic-rule))
+          (only (http basic-rule) token))
 
   ;;; 14.10 Connection
 

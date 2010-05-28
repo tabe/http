@@ -2,7 +2,7 @@
   (export Cache-Control)
   (import (rnrs (6))
           (http abnf)
-          (http basic-rule)
+          (only (http basic-rule) quoted-string token)
           (http date-time)
           (http message-header))
 

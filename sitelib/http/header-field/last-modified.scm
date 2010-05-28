@@ -2,7 +2,6 @@
   (export Last-Modified)
   (import (rnrs (6))
           (http abnf)
-          (http basic-rule)
           (http date-time))
 
   ;;; 14.29 Last-Modified

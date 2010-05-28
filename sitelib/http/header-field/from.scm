@@ -1,8 +1,7 @@
 (library (http header-field from)
   (export From)
   (import (rnrs (6))
-          (http abnf)
-          (http basic-rule))
+          (http abnf))
 
   ;;; 14.22 From
 

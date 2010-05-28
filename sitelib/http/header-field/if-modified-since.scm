@@ -2,7 +2,6 @@
   (export If-Modified-Since)
   (import (rnrs (6))
           (http abnf)
-          (http basic-rule)
           (http date-time))
 
   ;;; 14.25 If-Modified-Since

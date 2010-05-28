@@ -2,7 +2,6 @@
   (export If-Match)
   (import (rnrs (6))
           (http abnf)
-          (http basic-rule)
           (http entity-tag))
 
   ;;; 14.24 If-Match

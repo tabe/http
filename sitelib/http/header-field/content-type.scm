@@ -2,7 +2,6 @@
   (export Content-Type)
   (import (rnrs (6))
           (http abnf)
-          (http basic-rule)
           (http media-type))
 
   ;;; 14.17 Content-Type

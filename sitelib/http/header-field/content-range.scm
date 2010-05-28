@@ -2,7 +2,6 @@
   (export Content-Range)
   (import (rnrs (6))
           (http abnf)
-          (http basic-rule)
           (http range-unit))
 
   ;;; 14.16 Content-Range

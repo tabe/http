@@ -1,8 +1,7 @@
 (library (http header-field content-md5)
   (export Content-MD5)
   (import (rnrs (6))
-          (http abnf)
-          (http basic-rule))
+          (http abnf))
 
   ;;; 14.15 Content-MD5
 

@@ -2,7 +2,7 @@
   (export Expect)
   (import (rnrs (6))
           (http abnf)
-          (http basic-rule))
+          (only (http basic-rule) quoted-string token))
 
   ;;; 14.20 Expect
 

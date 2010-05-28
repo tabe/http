@@ -2,7 +2,7 @@
   (export Accept)
   (import (rnrs (6))
           (http abnf)
-          (http basic-rule)
+          (only (http basic-rule) quoted-string token)
           (http media-type)
           (http parameter)
           (http quality-value))

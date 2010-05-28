@@ -2,7 +2,6 @@
   (export Date)
   (import (rnrs (6))
           (http abnf)
-          (http basic-rule)
           (http date-time))
 
   ;;; 14.18 Date

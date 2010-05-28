@@ -1,8 +1,7 @@
 (library (http header-field content-length)
   (export Content-Length)
   (import (rnrs (6))
-          (http abnf)
-          (http basic-rule))
+          (http abnf))
 
   ;;; 14.13 Content-Length
 

@@ -2,7 +2,6 @@
   (export Accept-Ranges)
   (import (rnrs (6))
           (http abnf)
-          (http basic-rule)
           (http range-unit))
 
   ;;; 14.5 Accept-Ranges

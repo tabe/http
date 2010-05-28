@@ -2,7 +2,6 @@
   (export Accept-Charset)
   (import (rnrs (6))
           (http abnf)
-          (http basic-rule)
           (http character-set)
           (http quality-value))
 

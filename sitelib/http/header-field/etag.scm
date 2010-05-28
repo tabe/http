@@ -2,7 +2,6 @@
   (export ETag)
   (import (rnrs (6))
           (http abnf)
-          (http basic-rule)
           (http entity-tag))
 
   ;;; 14.19 ETag

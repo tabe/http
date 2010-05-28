@@ -2,7 +2,6 @@
   (export Content-Encoding)
   (import (rnrs (6))
           (http abnf)
-          (http basic-rule)
           (http content-coding))
 
   ;;; 14.11 Content-Encoding

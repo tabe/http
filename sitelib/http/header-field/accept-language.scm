@@ -2,7 +2,6 @@
   (export Accept-Language)
   (import (rnrs (6))
           (http abnf)
-          (http basic-rule)
           (http quality-value))
 
   ;;; 14.4 Accept-Language

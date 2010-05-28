@@ -2,7 +2,6 @@
   (export If-Range)
   (import (rnrs (6))
           (http abnf)
-          (http basic-rule)
           (http date-time)
           (http entity-tag))
 

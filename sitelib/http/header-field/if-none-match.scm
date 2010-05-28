@@ -2,7 +2,6 @@
   (export If-None-Match)
   (import (rnrs (6))
           (http abnf)
-          (http basic-rule)
           (http entity-tag))
 
   ;;; 14.26 If-None-Match

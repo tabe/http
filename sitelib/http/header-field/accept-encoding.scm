@@ -2,7 +2,6 @@
   (export Accept-Encoding)
   (import (rnrs (6))
           (http abnf)
-          (http basic-rule)
           (http content-coding)
           (http quality-value))
 
