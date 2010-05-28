@@ -23,4 +23,15 @@
                              '((#\h (#\t #\t #\p)) #\: ((#\/ #\/) ((((#\f #\o #\o) #\@)) (#\w #\w #\w #\. #\e #\x #\a #\m #\p #\l #\e #\. #\c #\o #\m) ((#\: (#\8 #\0)))) ((#\/ ()))) ((#\? (#\?))))
                              )
 
+(assert-parsing-successfully relativeURI
+                             "//www.example.com?q=relative"
+                             '(((#\/ #\/) (() (#\w #\w #\w #\. #\e #\x #\a #\m #\p #\l #\e #\. #\c #\o #\m) ()) ())
+                               ((#\? (#\q #\= #\r #\e #\l #\a #\t #\i #\v #\e)))
+                               ))
+(assert-parsing-successfully relativeURI
+                             "/foo"
+                             '((#\/ (((#\f #\o #\o) ())))
+                               ()
+                               ))
+
 (report)

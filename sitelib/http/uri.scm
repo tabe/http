@@ -1,6 +1,8 @@
 (library (http uri)
   (export URI
-          absolute-URI)
+          absolute-URI
+          (rename (absolute-URI absoluteURI))
+          relativeURI)
   (import (rnrs (6))
           (http abnf)
           (http uri authority)
@@ -56,5 +58,9 @@
 
   (define absolute-URI
     (seq scheme (char->rule #\:) hier-part (opt (seq ? query))))
+
+  ;;; D.2.  Modifications
+
+  (define relativeURI (seq relative-part (opt (seq (char->rule #\?) query))))
 
 )

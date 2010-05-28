@@ -2,7 +2,7 @@
   (export Location)
   (import (rnrs (6))
           (http abnf)
-          (rename (http uri) (absolute-URI absoluteURI)))
+          (http uri))
 
   ;;; 14.22 Location
 

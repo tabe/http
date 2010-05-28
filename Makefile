@@ -48,6 +48,8 @@ test:
 	$(YPSILON) test/http/header-field/content-language.scm
 	$(MOSH)    test/http/header-field/content-length.scm
 	$(YPSILON) test/http/header-field/content-length.scm
+	$(MOSH)    test/http/header-field/content-location.scm
+	$(YPSILON) test/http/header-field/content-location.scm
 	$(MOSH)    test/http/header-field/content-md5.scm
 	$(YPSILON) test/http/header-field/content-md5.scm
 	$(MOSH)    test/http/header-field/content-range.scm
