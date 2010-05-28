@@ -3,7 +3,7 @@
   (import (rnrs (6))
           (http abnf))
 
-  ;;; 14.22 Max-Forwards
+  ;;; 14.31 Max-Forwards
 
   ;; Max-Forwards   = "Max-Forwards" ":" 1*DIGIT
   (define Max-Forwards (seq (string->rule "Max-Forwards") (char->rule #\:) *LWS (rep+ DIGIT)))
