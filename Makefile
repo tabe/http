@@ -90,6 +90,8 @@ test:
 	$(YPSILON) test/http/header-field/range.scm
 	$(MOSH)    test/http/header-field/referer.scm
 	$(YPSILON) test/http/header-field/referer.scm
+	$(MOSH)    test/http/header-field/retry-after.scm
+	$(YPSILON) test/http/header-field/retry-after.scm
 	$(MOSH)    test/http/language-tag.scm
 	$(YPSILON) test/http/language-tag.scm
 	$(MOSH)    test/http/media-type.scm
