@@ -1,5 +1,6 @@
 (library (http header-field accept)
-  (export Accept)
+  (export Accept
+          accept-params)
   (import (rnrs (6))
           (http abnf)
           (only (http basic-rule) quoted-string token)

@@ -1,5 +1,6 @@
 (library (http transfer-coding)
   (export transfer-coding
+          transfer-extension
           Chunked-Body)
   (import (rnrs (6))
           (http abnf)
