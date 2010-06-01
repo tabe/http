@@ -99,6 +99,8 @@ test:
 	$(YPSILON) test/http/header-field/server.scm
 	$(MOSH)    test/http/header-field/te.scm
 	$(YPSILON) test/http/header-field/te.scm
+	$(MOSH)    test/http/header-field/trailer.scm
+	$(YPSILON) test/http/header-field/trailer.scm
 	$(MOSH)    test/http/language-tag.scm
 	$(YPSILON) test/http/language-tag.scm
 	$(MOSH)    test/http/media-type.scm
