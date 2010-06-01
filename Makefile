@@ -107,6 +107,8 @@ test:
 	$(YPSILON) test/http/header-field/upgrade.scm
 	$(MOSH)    test/http/header-field/user-agent.scm
 	$(YPSILON) test/http/header-field/user-agent.scm
+	$(MOSH)    test/http/header-field/vary.scm
+	$(YPSILON) test/http/header-field/vary.scm
 	$(MOSH)    test/http/language-tag.scm
 	$(YPSILON) test/http/language-tag.scm
 	$(MOSH)    test/http/media-type.scm
