@@ -3,9 +3,12 @@ include config.mk
 MOSH = env MOSH_LOADPATH=$(XUNIT):test/stub mosh --loadpath=sitelib
 YPSILON = env YPSILON_SITELIB=$(XUNIT):test/stub ypsilon --sitelib=sitelib
 
-.PHONY: check stats test
+.PHONY: check clean stats test
 
 check: test
+
+clean:
+	find . -type f -name '*~' -exec rm {} \; -print
 
 stats:
 	find sitelib -type f -name '*.scm' -print0 | xargs -0 wc -l | tail -1
