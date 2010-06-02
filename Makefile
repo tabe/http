@@ -111,6 +111,8 @@ test:
 	$(YPSILON) test/http/header-field/vary.scm
 	$(MOSH)    test/http/header-field/via.scm
 	$(YPSILON) test/http/header-field/via.scm
+	$(MOSH)    test/http/header-field/warning.scm
+	$(YPSILON) test/http/header-field/warning.scm
 	$(MOSH)    test/http/language-tag.scm
 	$(YPSILON) test/http/language-tag.scm
 	$(MOSH)    test/http/media-type.scm

@@ -4,6 +4,7 @@
           (http abnf)
           (http stream)
           (only (http basic-rule) comment token)
+          (only (http header-field basic-rule) pseudonym)
           (only (http uri host) host)
           (only (http uri port) port))
 
@@ -18,9 +19,6 @@
   ;; received-protocol = [ protocol-name "/" ] protocol-version
   (define received-protocol
     (seq (opt (seq protocol-name (char->rule #\/))) protocol-version))
-
-  ;; pseudonym         = token
-  (define pseudonym token)
 
   ;; the original host can be terminate with #\,(comma), which
   ;; may be used as a delimiter.
