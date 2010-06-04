@@ -17,6 +17,8 @@ stats:
 test:
 	$(MOSH)    test/http/abnf.scm
 	$(YPSILON) test/http/abnf.scm
+	$(MOSH)    test/http/authentication/basic-rule.scm
+	$(YPSILON) test/http/authentication/basic-rule.scm
 	$(MOSH)    test/http/basic-rule.scm
 	$(YPSILON) test/http/basic-rule.scm
 	$(MOSH)    test/http/character-set.scm
@@ -113,6 +115,8 @@ test:
 	$(YPSILON) test/http/header-field/via.scm
 	$(MOSH)    test/http/header-field/warning.scm
 	$(YPSILON) test/http/header-field/warning.scm
+	$(MOSH)    test/http/header-field/www-authenticate.scm
+	$(YPSILON) test/http/header-field/www-authenticate.scm
 	$(MOSH)    test/http/language-tag.scm
 	$(YPSILON) test/http/language-tag.scm
 	$(MOSH)    test/http/media-type.scm
