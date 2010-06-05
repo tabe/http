@@ -91,6 +91,8 @@ test:
 	$(YPSILON) test/http/header-field/max-forwards.scm
 	$(MOSH)    test/http/header-field/pragma.scm
 	$(YPSILON) test/http/header-field/pragma.scm
+	$(MOSH)    test/http/header-field/proxy-authenticate.scm
+	$(YPSILON) test/http/header-field/proxy-authenticate.scm
 	$(MOSH)    test/http/header-field/range.scm
 	$(YPSILON) test/http/header-field/range.scm
 	$(MOSH)    test/http/header-field/referer.scm
