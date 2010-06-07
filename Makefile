@@ -133,6 +133,8 @@ test:
 	$(YPSILON) test/http/language-tag.scm
 	$(MOSH)    test/http/media-type.scm
 	$(YPSILON) test/http/media-type.scm
+	$(MOSH)    test/http/message-body.scm
+	$(YPSILON) test/http/message-body.scm
 	$(MOSH)    test/http/message-header.scm
 	$(YPSILON) test/http/message-header.scm
 	$(MOSH)    test/http/method.scm
