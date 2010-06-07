@@ -11,4 +11,8 @@
                                (#\space)
                                (((#\r #\e #\a #\l #\m) #\= (#\" ((ctext #\W) (ctext #\a) (ctext #\l) (ctext #\l) (ctext #\y) (ctext #\W) (ctext #\o) (ctext #\r) (ctext #\l) (ctext #\d)) #\")))))
 
+(assert-parsing-successfully credentials
+                             "Foo bar"
+                             '((#\F #\o #\o) (#\space) (#\b #\a #\r)))
+
 (report)
