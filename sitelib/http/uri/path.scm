@@ -2,6 +2,7 @@
   (export path
           path-abempty
           path-absolute
+          (rename (path-absolute abs_path))
           path-noscheme
           path-rootless
           path-empty)
