@@ -147,6 +147,8 @@ test:
 	$(YPSILON) test/http/range-unit.scm
 	$(MOSH)    test/http/request-header-field.scm
 	$(YPSILON) test/http/request-header-field.scm
+	$(MOSH)    test/http/request-line.scm
+	$(YPSILON) test/http/request-line.scm
 	$(MOSH)    test/http/request-uri.scm
 	$(YPSILON) test/http/request-uri.scm
 	$(MOSH)    test/http/stream.scm
