@@ -27,6 +27,8 @@ test:
 	$(YPSILON) test/http/content-coding.scm
 	$(MOSH)    test/http/date-time.scm
 	$(YPSILON) test/http/date-time.scm
+	$(MOSH)    test/http/entity-body.scm
+	$(YPSILON) test/http/entity-body.scm
 	$(MOSH)    test/http/entity-tag.scm
 	$(YPSILON) test/http/entity-tag.scm
 	$(MOSH)    test/http/header-field/accept-charset.scm
