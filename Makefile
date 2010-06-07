@@ -157,6 +157,8 @@ test:
 	$(YPSILON) test/http/request.scm
 	$(MOSH)    test/http/response-header-field.scm
 	$(YPSILON) test/http/response-header-field.scm
+	$(MOSH)    test/http/status-code.scm
+	$(YPSILON) test/http/status-code.scm
 	$(MOSH)    test/http/stream.scm
 	$(YPSILON) test/http/stream.scm
 	$(MOSH)    test/http/transfer-coding.scm
