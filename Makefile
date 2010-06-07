@@ -43,6 +43,8 @@ test:
 	$(YPSILON) test/http/header-field/age.scm
 	$(MOSH)    test/http/header-field/allow.scm
 	$(YPSILON) test/http/header-field/allow.scm
+	$(MOSH)    test/http/header-field/authorization.scm
+	$(YPSILON) test/http/header-field/authorization.scm
 	$(MOSH)    test/http/header-field/cache-control.scm
 	$(YPSILON) test/http/header-field/cache-control.scm
 	$(MOSH)    test/http/header-field/connection.scm
