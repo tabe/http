@@ -42,13 +42,13 @@
   (define (char->rule x)
     (assert (char? x))
     (lambda (s failure success)
-      (let ((c (stream-pop! s)))
-        (cond ((eof-object? c)
+      (let ((b (stream-pop! s)))
+        (cond ((eof-object? b)
                (failure '()))
-              ((char=? x c)
-               (success (list c) c))
+              ((= (char->integer x) b)
+               (success (list b) x))
               (else
-               (failure (list c)))))))
+               (failure (list b)))))))
 
   (define (string->rule str)
     (assert (string? str))
@@ -57,15 +57,14 @@
   (define (pair->rule x)
     (assert (pair? x))
     (lambda (s failure success)
-      (let ((c (stream-pop! s)))
-        (cond ((eof-object? c)
+      (let ((b (stream-pop! s)))
+        (cond ((eof-object? b)
                (failure '()))
-              ((let ((d (char->integer c)))
-                 (and (<= (car x) d)
-                      (<= d (cdr x))))
-               (success (list c) c))
+              ((and (<= (car x) b)
+                    (<= b (cdr x)))
+               (success (list b) (integer->char b)))
               (else
-               (failure (list c)))))))
+               (failure (list b)))))))
 
   (define (seq arg . rest)
     (lambda (s failure success)
@@ -127,26 +126,27 @@
     (lambda (s failure success)
       (let loop ((head '())
                  (tree '()))
-        (let ((c (stream-pop! s)))
-          (cond ((eof-object? c)
-                 (if (<= n (length tree))
-                     (success head (reverse tree))
-                     (failure head)))
-                ((member c '(#\return #\linefeed #\space #\tab #\,))
-                 (loop (cons c head) tree))
-                (else
-                 (stream-push! s c)
-                 (rule
-                  s
-                  (lambda (h)
-                    (for-each (lambda (x) (stream-push! s x)) h)
-                    (if (<= n (length tree))
-                        (success head (reverse tree))
-                        (failure head)))
-                  (lambda (h t)
-                    (if (and (integer? m) (>= (length tree) m))
-                        (failure (append h head))
-                        (loop (append h head) (cons t tree)))))))))))
+        (let ((b (stream-pop! s)))
+          (if (eof-object? b)
+              (if (<= n (length tree))
+                  (success head (reverse tree))
+                  (failure head))
+              (let ((c (integer->char b)))
+                (cond ((member c '(#\return #\linefeed #\space #\tab #\,))
+                       (loop (cons b head) tree))
+                      (else
+                       (stream-push! s b)
+                       (rule
+                        s
+                        (lambda (h)
+                          (for-each (lambda (x) (stream-push! s x)) h)
+                          (if (<= n (length tree))
+                              (success head (reverse tree))
+                              (failure head)))
+                        (lambda (h t)
+                          (if (and (integer? m) (>= (length tree) m))
+                              (failure (append h head))
+                              (loop (append h head) (cons t tree)))))))))))))
 
   (define (num* rule) (num 0 #t rule))
 
@@ -156,10 +156,10 @@
 
   ;; OCTET          = <any 8-bit sequence of data>
   (define (OCTET s failure success)
-    (let ((c (stream-pop! s)))
-      (if (eof-object? c)
+    (let ((b (stream-pop! s)))
+      (if (eof-object? b)
           (failure '())
-          (success (list c) c))))
+          (success (list b) b))))
 
   ;; CHAR           = <any US-ASCII character (octets 0 - 127)>
   (define CHAR (pair->rule '(0 . 127)))
@@ -202,15 +202,17 @@
   (define LWS (seq (opt CRLF) (rep+ (bar SP HT))))
 
   (define (*LWS s failure success)
-    (let loop ((head '()))
-      (let ((c (stream-pop! s)))
-        (cond ((eof-object? c)
-               (success head (reverse head)))
-              ((member c '(#\return #\linefeed #\space #\tab))
-               (loop (cons c head)))
-              (else
-               (stream-push! s c)
-               (success head (reverse head)))))))
+    (let loop ((head '())
+               (tree '()))
+      (let ((b (stream-pop! s)))
+        (if (eof-object? b)
+            (success head (reverse tree))
+            (let ((c (integer->char b)))
+              (cond ((member c '(#\return #\linefeed #\space #\tab))
+                     (loop (cons b head) (cons c tree)))
+                    (else
+                     (stream-push! s b)
+                     (success head (reverse tree)))))))))
 
   ;; HEX            = "A" | "B" | "C" | "D" | "E" | "F"
   ;;                | "a" | "b" | "c" | "d" | "e" | "f" | DIGIT

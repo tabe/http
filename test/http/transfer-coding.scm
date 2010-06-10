@@ -20,10 +20,10 @@
                                             ;; empty trailer
                                             "\r\n"
                                             )
-                             '((((#\1 #\0) (()) (#\return #\linefeed)
-                                 (#\0 #\1 #\2 #\3 #\4 #\5 #\6 #\7 #\8 #\9) (#\return #\linefeed))
+                             `((((#\1 #\0) (()) (#\return #\linefeed)
+                                 ,(map char->integer '(#\0 #\1 #\2 #\3 #\4 #\5 #\6 #\7 #\8 #\9)) (#\return #\linefeed))
                                 ((#\1 #\3) (()) (#\return #\linefeed)
-                                 (#\H #\e #\l #\l #\o #\, #\space #\W #\o #\r #\l #\d #\.) (#\return #\linefeed)))
+                                 ,(map char->integer '(#\H #\e #\l #\l #\o #\, #\space #\W #\o #\r #\l #\d #\.)) (#\return #\linefeed)))
                                ((#\0 #\0 #\0 #\0) (()) (#\return #\linefeed))
                                ()
                                (#\return #\linefeed)))

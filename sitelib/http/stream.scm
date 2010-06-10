@@ -6,8 +6,9 @@
           stream-queue
           stream-pop!
           stream-push!
+          close-stream
           port->stream
-          )
+          string->stream)
   (import (rnrs (6)))
 
   (define-record-type stream
@@ -17,17 +18,27 @@
     (assert (stream? s))
     (let ((q (stream-queue s)))
       (if (null? q)
-          (get-char (stream-port s))
-          (let ((c (car q)))
+          (get-u8 (stream-port s))
+          (let ((b (car q)))
             (stream-queue-set! s (cdr q))
-            c))))
+            b))))
 
-  (define (stream-push! s c)
+  (define (stream-push! s b)
     (assert (stream? s))
-    (stream-queue-set! s (cons c (stream-queue s))))
+    (stream-queue-set! s (cons b (stream-queue s))))
+
+  (define (close-stream s)
+    (assert (stream? s))
+    (close-port (stream-port s)))
 
   (define (port->stream p)
     (assert (port? p))
     (make-stream p '()))
+
+  (define (string->stream s)
+    (assert (string? s))
+    (let* ((bv (string->utf8 s))
+           (p (open-bytevector-input-port bv)))
+      (port->stream p)))
 
 )

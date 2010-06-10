@@ -6,22 +6,24 @@
 
 (define-assert-predicate stream?)
 
-(define s (port->stream (open-string-input-port "ABC")))
+(define s (string->stream "ABC"))
 (assert-stream? s)
 (assert-input-port? (stream-port s))
 (assert-null? (stream-queue s))
 
-(assert-char=? #\A (stream-pop! s))
-(assert-char=? #\B (stream-pop! s))
-(stream-push! s #\x)
-(stream-push! s #\y)
-(assert-char=? #\y (stream-pop! s))
-(assert-char=? #\x (stream-pop! s))
-(assert-char=? #\C (stream-pop! s))
+(assert-= (char->integer #\A) (stream-pop! s))
+(assert-= (char->integer #\B) (stream-pop! s))
+(stream-push! s (char->integer #\x))
+(stream-push! s (char->integer #\y))
+(assert-= (char->integer #\y) (stream-pop! s))
+(assert-= (char->integer #\x) (stream-pop! s))
+(assert-= (char->integer #\C) (stream-pop! s))
 (assert-eof-object? (stream-pop! s))
 (assert-eof-object? (stream-pop! s)) ;; idempotent
-(stream-push! s #\z)
-(assert-char=? #\z (stream-pop! s))
+(stream-push! s (char->integer #\z))
+(assert-= (char->integer #\z) (stream-pop! s))
+
+(close-stream s)
 
 (report)
 

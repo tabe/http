@@ -9,9 +9,9 @@
                              (string-append "POST / HTTP/1.1\r\n"
                                             "\r\n"
                                             "foobar")
-                             '(((#\P #\O #\S #\T) #\space (#\/ ()) #\space ((#\H #\T #\T #\P #\/) (#\1) #\. (#\1)) (#\return #\linefeed))
+                             `(((#\P #\O #\S #\T) #\space (#\/ ()) #\space ((#\H #\T #\T #\P #\/) (#\1) #\. (#\1)) (#\return #\linefeed))
                                ()
                                (#\return #\linefeed)
-                               ((#\f #\o #\o #\b #\a #\r))))
+                               (,(map char->integer '(#\f #\o #\o #\b #\a #\r)))))
 
 (report)

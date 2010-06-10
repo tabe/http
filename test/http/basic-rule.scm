@@ -9,9 +9,9 @@
 (assert-parsing-successfully token "This_is_a-t0ken")
 
 (assert-parsing-successfully ctext "a" '(ctext #\a))
-(assert-parsing-successfully ctext "\r\n " '(#\space) '(ctext #\space))
-(assert-parsing-successfully ctext "\r\n \t" '(#\space) '(ctext #\space))
-(assert-parsing-successfully ctext "\r\n\t " '(#\tab) '(ctext #\tab))
+(assert-parsing-successfully ctext "\r\n " '(32) '(ctext #\space))
+(assert-parsing-successfully ctext "\r\n \t" '(32) '(ctext #\space))
+(assert-parsing-successfully ctext "\r\n\t " '(9) '(ctext #\tab))
 
 (assert-parsing-successfully quoted-pair "\\a" '(quoted-pair #\a))
 (assert-parsing-successfully quoted-pair "\\\\" '(quoted-pair #\\))

@@ -28,8 +28,8 @@
      failure
      (lambda (head tree)
        (cond ((null? head) (success head tree))
-             ((char=? #\, (car head))
-              (stream-push! s #\,)
+             ((= 44 (car head)) ; #\,
+              (stream-push! s 44)
               (success (cdr head)
                        (reverse (cdr (reverse tree)))))
              (else (success head tree))))))

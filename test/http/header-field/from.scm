@@ -10,7 +10,7 @@
                              `(,(string->list "From")
                                #\:
                                (#\space)
-                               ,(string->list "webmaster@w3.org")
+                               ,(map char->integer (string->list "webmaster@w3.org"))
                                ))
 
 (report)

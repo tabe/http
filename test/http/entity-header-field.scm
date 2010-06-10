@@ -5,6 +5,8 @@
         (http assertion)
         (xunit))
 
-(assert-parsing-successfully entity-header "foo:bar" '((#\f #\o #\o) #\: ((#\b #\a #\r))))
+(assert-parsing-successfully entity-header
+                             "foo:bar"
+                             `((#\f #\o #\o) #\: (,(map char->integer '(#\b #\a #\r)))))
 
 (report)

@@ -38,4 +38,8 @@
 (assert-parsing-successfully HEX "8" #\8)
 (assert-parsing-successfully HEX "9" #\9)
 
+(assert-parsing-successfully *LWS "")
+(assert-parsing-successfully *LWS " " '(#\space))
+(assert-parsing-successfully *LWS " \t\r\n\t\t" '(#\space #\tab #\return #\linefeed #\tab #\tab))
+
 (report)
